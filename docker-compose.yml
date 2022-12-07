@@ -8,9 +8,10 @@ services:
     networks:
       - mynetwork
     ports:
-      - 8085:8085
+      - 8087:8087
     depends_on:
       - mongoService
+      - cloudapiservice
 
 
   mongoService:
@@ -29,14 +30,15 @@ services:
     networks:
       - mynetwork
     ports:
-      - 8080:8080
+      - 8083:8083
     depends_on:
       - mysqlService
+      - cloudapiservice
 
 
   mysqlService:
     image: mysql:latest
-    container_name: mysqlService
+    container_name: mysqlservice
     networks:
       - mynetwork
     ports:
@@ -46,6 +48,15 @@ services:
       MYSQL_USERNAME: root
       MYSQL_PASSWORD: root
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+  cloudapiservice:
+    image: apigateway-service
+    build: SpringCloudAPIGateway
+    restart: always
+    networks:
+      - mynetwork
+    ports:
+      - 9005:9005
 
 
 networks:
