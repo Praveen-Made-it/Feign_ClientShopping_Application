@@ -3,10 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.6</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>com.niit.jdp</groupId>
+		<artifactId>BEJ_C3_S4_Create_Microservices_Spring_Boot_PC_1</artifactId>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<groupId>com.niit.jdp</groupId>
 	<artifactId>SpringCloudAPIGateway</artifactId>
@@ -22,13 +21,8 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
