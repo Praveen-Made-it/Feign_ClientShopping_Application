@@ -16,7 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("customerdata/api/")
+@RequestMapping("/api/v1/")
 public class CustomerController {
     private CustomerService customerService;
 
