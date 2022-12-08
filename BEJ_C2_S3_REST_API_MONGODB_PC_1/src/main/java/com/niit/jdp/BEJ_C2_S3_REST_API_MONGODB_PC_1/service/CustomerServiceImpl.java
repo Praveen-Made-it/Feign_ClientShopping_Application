@@ -9,6 +9,7 @@ package com.niit.jdp.BEJ_C2_S3_REST_API_MONGODB_PC_1.service;
 
 import com.niit.jdp.BEJ_C2_S3_REST_API_MONGODB_PC_1.domain.Customer;
 import com.niit.jdp.BEJ_C2_S3_REST_API_MONGODB_PC_1.exception.CustomerNotFoundException;
+import com.niit.jdp.BEJ_C2_S3_REST_API_MONGODB_PC_1.proxy.UserProxy;
 import com.niit.jdp.BEJ_C2_S3_REST_API_MONGODB_PC_1.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,14 +20,20 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
 
     private CustomerRepository customerRepository;
+    private UserProxy userProxy;
 
     @Autowired
-    public CustomerServiceImpl(CustomerRepository customerRepository) {
+    public CustomerServiceImpl(CustomerRepository customerRepository, UserProxy userProxy) {
         this.customerRepository = customerRepository;
+        this.userProxy = userProxy;
     }
+
 
     @Override
     public Customer saveCustomer(Customer customer) {
+        System.out.println("line1 ");
+        userProxy.saveUser(customer);
+        System.out.println("line2");
         return customerRepository.save(customer);
     }
 
@@ -54,4 +61,5 @@ public class CustomerServiceImpl implements CustomerService {
         }
         return customerRepository.findAllCustomersFromProductName(productName);
     }
+
 }

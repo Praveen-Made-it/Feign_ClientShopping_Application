@@ -15,15 +15,19 @@ public class Customer {
     @Id
     private int customerId;
     private String customerName;
+    private String email;
+    private String password;
     private String customerPhoneNo;
     private Product customerProduct;
 
     public Customer() {
     }
 
-    public Customer(int customerId, String customerName, String customerPhoneNo, Product customerProduct) {
+    public Customer(int customerId, String customerName, String email, String password, String customerPhoneNo, Product customerProduct) {
         this.customerId = customerId;
         this.customerName = customerName;
+        this.email = email;
+        this.password = password;
         this.customerPhoneNo = customerPhoneNo;
         this.customerProduct = customerProduct;
     }
@@ -42,6 +46,22 @@ public class Customer {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getCustomerPhoneNo() {
@@ -65,6 +85,8 @@ public class Customer {
         return "Customer{" +
                 "customerId=" + customerId +
                 ", customerName='" + customerName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", customerPhoneNo='" + customerPhoneNo + '\'' +
                 ", customerProduct=" + customerProduct +
                 '}';
