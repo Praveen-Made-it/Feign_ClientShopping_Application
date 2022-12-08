@@ -21,6 +21,7 @@
     <module>BEJ_C2_S3_REST_API_MONGODB_PC_1</module>
     <module>UserAuthentication</module>
     <module>SpringCloudAPIGateway</module>
+    <module>EurekaServer</module>
   </modules>
 
   <build>
