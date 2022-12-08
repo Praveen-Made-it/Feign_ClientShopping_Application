@@ -30,12 +30,12 @@ public class UserController
     }
 
 
-    @PostMapping("/register")
+    @PostMapping("/register/")
     public ResponseEntity<?>  saveUser(@RequestBody UserModel userModel) throws UserAlreadyExistException {
         return  new ResponseEntity<>(userService.addUser(userModel), HttpStatus.CREATED);
     }
 
-    @PostMapping("/login")
+    @PostMapping("/login/")
     public ResponseEntity<?> loginCheck(@RequestBody UserModel user ) throws UserNotFoundException {
         Map<String, String> map=null;
         try{
